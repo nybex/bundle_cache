@@ -2,13 +2,4 @@
 
 require_relative '../lib/bundle_cache'
 
-required_env = %w(AWS_S3_KEY AWS_S3_SECRET AWS_S3_BUCKET BUNDLE_ARCHIVE)
-
-required_env.each do |var|
-  unless ENV[var]
-    puts "Missing ENV[#{var}]"
-    exit 1
-  end
-end
-
 BundleCache.install
